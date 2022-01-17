@@ -74,6 +74,22 @@ for each pattern p {
     }
 }
 ```
+---
 
+## Node Perturbation
+
+![](../images/np_algo.png)
+
+>Correction in this formula, see the next formula !!
+
+Here, we want to approximate the gradient of the node output with respect to the loss function. Thus,
+$$ \frac{\partial L}{\partial w_{k, ij}} \approx \frac{\Delta L}{\Delta z_{k,j}} \times x_{k-1, i}$$
+
+Thus, the update rule becomes,
+$$ \Delta w_{k, ij} = - \eta \times \frac{\Delta L}{\Delta z_{k,j}} \times x_{k-1, i}$$
+$$ \implies \Delta w_{k, ij}  = - \eta \times \left (\frac{L(z_{k,j} + pert_{k, ij}) - L(z_{k,j})}{pert_{k, ij}} \right)\times x_{k-1, i} $$
+
+We can rewrite the above equation as follows,
+$$ \Delta w_{k, ij} = G(pert_{k, ij}) \times \Delta L(z_{k,j}, pert_{k, ij}) \times x_{k-1, i}$$
 ---
 ## The Underlying principle - *Minimal Disturbance Principle*
