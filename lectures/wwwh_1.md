@@ -4,17 +4,20 @@
   - [General architecture](#general-architecture)
     - [Notation](#notation)
   - [Back Propagation - A quick recap](#back-propagation---a-quick-recap)
-  - [!](#)
   - [Weight perturbation](#weight-perturbation)
     - [WP Algo at a very simplistic level](#wp-algo-at-a-very-simplistic-level)
   - [Node Perturbation](#node-perturbation)
   - [Hardware Implementation BP](#hardware-implementation-bp)
+    - [Notation used](#notation-used)
+    - [Flow of information](#flow-of-information)
   - [Hardware Implementation WP](#hardware-implementation-wp)
   - [Hardware Implementation NP](#hardware-implementation-np)
   - [The Underlying principle - *Minimal Disturbance Principle*](#the-underlying-principle---minimal-disturbance-principle)
 ---
 ## General architecture
 ![](https://miro.medium.com/proxy/1*YuotNxDwryjp3FiOwhVIkg.jpeg)
+
+
 
 
 
@@ -54,11 +57,14 @@ where L is the loss function and $w_i$ is the weight of the neuron.
 
 Using chain rule again and again we get the following,
 
-![general_arch](/images/back_prop_algo.png)
+![general_arch](/images/back_prop_algo.png )
 
 So as the depth of our neural network increases at each level of the network we need to perform the above update. And so its clear why this requires such precise calculation power since this techique is susceptible to error propagation.
 
 ![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4_xtx_XOVvoRdHq4BSK3N8FXVScr9s9RlAA&usqp=CAU)
+
+
+
 ---
 ## Weight perturbation
 
@@ -115,8 +121,15 @@ $$ \Delta w_{k, ij} = G(pert_{k, ij}) \times \Delta L(z_{k,j}, pert_{k, ij}) \ti
 
 ## Hardware Implementation BP
 ![](../images/bp.jpg)
+Notice that this diagram shows the flow of information from a neuron j to neuron i.
 
-Here $net_{j}$ refers to the input to the activation function (z) and output of each neuron is x
+### Notation used
+1. $net_j$ : net input to a neuron j
+2. $x_j$ : output of a neuron j
+
+### Flow of information
+Recall that we had written the formula
+$\frac{\partial L}{\partial w_{k, ij}}$.
 
 ## Hardware Implementation WP
 ![](../images/wp.jpg)
