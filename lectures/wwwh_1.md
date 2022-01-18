@@ -1,8 +1,23 @@
 # 3 W's and an H
-In this post, I wanted to go through *when*, *what*, *why* and *how* did perturbation techniques actually come about.
-
+- [3 W's and an H](#3-ws-and-an-h)
+  - [- The Underlying principle - *Minimal Disturbance Principle*](#--the-underlying-principle---minimal-disturbance-principle)
+  - [General architecture](#general-architecture)
+    - [Notation](#notation)
+  - [Back Propagation - A quick recap](#back-propagation---a-quick-recap)
+  - [!](#)
+  - [Weight perturbation](#weight-perturbation)
+    - [WP Algo at a very simplistic level](#wp-algo-at-a-very-simplistic-level)
+  - [Node Perturbation](#node-perturbation)
+  - [Hardware Implementation BP](#hardware-implementation-bp)
+  - [Hardware Implementation WP](#hardware-implementation-wp)
+  - [Hardware Implementation NP](#hardware-implementation-np)
+  - [The Underlying principle - *Minimal Disturbance Principle*](#the-underlying-principle---minimal-disturbance-principle)
 ---
 ## General architecture
+![](https://miro.medium.com/proxy/1*YuotNxDwryjp3FiOwhVIkg.jpeg)
+
+
+
 ![general_arch](/images/general_arch.png)
 
 ### Notation
@@ -43,6 +58,7 @@ Using chain rule again and again we get the following,
 
 So as the depth of our neural network increases at each level of the network we need to perform the above update. And so its clear why this requires such precise calculation power since this techique is susceptible to error propagation.
 
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4_xtx_XOVvoRdHq4BSK3N8FXVScr9s9RlAA&usqp=CAU)
 ---
 ## Weight perturbation
 
@@ -69,7 +85,8 @@ for each pattern p {
     ClearDeltaWeights()
     for each weight w_k_ij do {
         Epert = ApplyPerturbation(w_k_ij)
-        DeltaError = - eta * DeltaError/Perturbation
+        DeltaError = Epert - E
+        DeltaW[k][i] = - eta * DeltaError/Perturbation
         RemovePerturbation(w_k_ij)
     }
 }
@@ -91,5 +108,21 @@ $$ \implies \Delta w_{k, ij}  = - \eta \times \left (\frac{L(z_{k,j} + pert_{k, 
 
 We can rewrite the above equation as follows,
 $$ \Delta w_{k, ij} = G(pert_{k, ij}) \times \Delta L(z_{k,j}, pert_{k, ij}) \times x_{k-1, i}$$
+
+>> Althought the algorithm remains more or less the same, we need to perform an additonal multipication in the case of NP and thus this requires additional hardware. Thus, WP is slightly better with respect to this!
+
 ---
+
+## Hardware Implementation BP
+![](../images/bp.jpg)
+
+Here $net_{j}$ refers to the input to the activation function (z) and output of each neuron is x
+
+## Hardware Implementation WP
+![](../images/wp.jpg)
+
+## Hardware Implementation NP
+![](../images/np.jpg)
+
+
 ## The Underlying principle - *Minimal Disturbance Principle*
