@@ -1,6 +1,6 @@
 # 3 W's and an H
 - [3 W's and an H](#3-ws-and-an-h)
-  - [- The Underlying principle - *Minimal Disturbance Principle*](#--the-underlying-principle---minimal-disturbance-principle)
+  - [- Hardware Implementation NP](#--hardware-implementation-np)
   - [General architecture](#general-architecture)
     - [Notation](#notation)
   - [Back Propagation - A quick recap](#back-propagation---a-quick-recap)
@@ -12,7 +12,6 @@
     - [Flow of information](#flow-of-information)
   - [Hardware Implementation WP](#hardware-implementation-wp)
   - [Hardware Implementation NP](#hardware-implementation-np)
-  - [The Underlying principle - *Minimal Disturbance Principle*](#the-underlying-principle---minimal-disturbance-principle)
 ---
 ## General architecture
 ![](https://miro.medium.com/proxy/1*YuotNxDwryjp3FiOwhVIkg.jpeg)
@@ -138,4 +137,3 @@ $\frac{\partial L}{\partial w_{k, ij}}$.
 ![](../images/np.jpg)
 
 
-## The Underlying principle - *Minimal Disturbance Principle*
