@@ -1,6 +1,6 @@
 # 3 W's and an H
 - [3 W's and an H](#3-ws-and-an-h)
-  - [- Hardware Implementation NP](#--hardware-implementation-np)
+  - [- Who wins?](#--who-wins)
   - [General architecture](#general-architecture)
     - [Notation](#notation)
   - [Back Propagation - A quick recap](#back-propagation---a-quick-recap)
@@ -12,6 +12,7 @@
     - [Flow of information](#flow-of-information)
   - [Hardware Implementation WP](#hardware-implementation-wp)
   - [Hardware Implementation NP](#hardware-implementation-np)
+  - [Who wins?](#who-wins)
 ---
 ## General architecture
 ![](https://miro.medium.com/proxy/1*YuotNxDwryjp3FiOwhVIkg.jpeg)
@@ -136,4 +137,8 @@ $\frac{\partial L}{\partial w_{k, ij}}$.
 ## Hardware Implementation NP
 ![](../images/np.jpg)
 
+
+## Who wins?
+
+![](../images/comp.jpg)
 
