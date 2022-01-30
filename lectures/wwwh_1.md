@@ -1,6 +1,6 @@
 # 3 W's and an H
 - [3 W's and an H](#3-ws-and-an-h)
-  - [- Who wins?](#--who-wins)
+  - [- Comments](#--comments)
   - [General architecture](#general-architecture)
     - [Notation](#notation)
   - [Back Propagation - A quick recap](#back-propagation---a-quick-recap)
@@ -13,6 +13,7 @@
   - [Hardware Implementation WP](#hardware-implementation-wp)
   - [Hardware Implementation NP](#hardware-implementation-np)
   - [Who wins?](#who-wins)
+  - [Comments](#comments)
 ---
 ## General architecture
 ![](https://miro.medium.com/proxy/1*YuotNxDwryjp3FiOwhVIkg.jpeg)
@@ -141,4 +142,16 @@ $\frac{\partial L}{\partial w_{k, ij}}$.
 ## Who wins?
 
 ![](../images/comp.jpg)
+
+## Comments
+
+1. Matrix mult highly accelerated...easy to do BP ?
+2. Memory used to rep the weight-SRAM affects the area of the chip- bits/weight
+3. Is it pocble to do BP on chip? - does it work with less no of bits?
+4. Sufficient precision reqd in BP
+5. Deep network with limited no of bits/weight adn the no of layers.
+6. Highlight the difference...expt to support hypothesis - absence of BP affects in terms of 
+7. Winning - performance, area or speed ?
+8. Performance - less bpw more layers- WP wins
+9. Variablity - analog based charac  - BP - formula based 
 
