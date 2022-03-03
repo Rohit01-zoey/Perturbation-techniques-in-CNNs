@@ -4,4 +4,4 @@ Backpropagation is a technique used in machine learning models which is fast and
 To solve this constraint, we implement perturbation techniques in our CNN model. This includes **weight perturbation** and **node perturbation**. These techniques have been found out to be slower however use up very less computing power. As a result, these can be implemented on-chip.
 
 # My progress
-{% include_relative https://github.com/Rohit01-zoey/Perturbation-techniques-in-CNNs/blob/main/agenda.md %}
+I'm [here](https://github.com/Rohit01-zoey/Perturbation-techniques-in-CNNs/blob/main/agenda.md).
