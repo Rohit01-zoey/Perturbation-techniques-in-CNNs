@@ -11,6 +11,7 @@
 
 ## Ways forward
 1. First : Have a control structure-block diagram- for each block of code along with *checks or validation*
-2. Check for weight update - from a benchmark that is BP - 
+2. Check for weight update - from a benchmark that is BP - will have to do BP
+3. Have a test(validation) for each of the blocks of code  you have written - IMP step in writing a code.
 
 ---
